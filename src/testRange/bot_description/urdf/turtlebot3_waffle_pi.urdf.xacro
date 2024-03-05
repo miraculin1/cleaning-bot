@@ -155,10 +155,16 @@
   <link name="imu_link"/>
 
   <xacro:property name="gpu" value="true" />
-  <xacro:include filename="$(find bot_description)/urdf/VLP-16.urdf.xacro"/>
-  <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}">
+  <xacro:include filename="$(find robosense_description)/urdf/RS-16.urdf.xacro"/>
+  <xacro:RS-16 parent="base_link" name="robosense" topic="/rs_points" hz="20" samples="900" gpu="${gpu}">
     <origin xyz="-0.064 0 0.1" rpy="0 0 0"/>
-  </xacro:VLP-16>
+  </xacro:RS-16>
+
+  <!-- <xacro:property name="gpu" value="true" /> -->
+  <!-- <xacro:include filename="$(find bot_description)/urdf/VLP-16.urdf.xacro"/> -->
+  <!-- <xacro:VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}"> -->
+    <!-- <origin xyz="-0.064 0 0.1" rpy="0 0 0"/> -->
+  <!-- </xacro:VLP-16> -->
 
   <!-- <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/> -->
   <!-- <xacro:HDL-32E parent="base_link" name="velodyne2" topic="/velodyne_points2" hz="10" samples="220" gpu="${gpu}"> -->
