@@ -25,3 +25,6 @@
 [submodule "src/robosense_simulator"]
 	path = src/robosense_simulator
 	url = git@github.com:tomlogan501/robosense_simulator.git
+[submodule "src/LIO-SAM"]
+	path = src/LIO-SAM
+	url = git@github.com:TixiaoShan/LIO-SAM.git

@@ -7,7 +7,7 @@
   <arg name="enable_imu_acc" default="false" />
   <arg name="enable_imu_ori" default="false" />
 
-  <arg name="points_topic" default="/velodyne_points" />
+  <arg name="points_topic" default="/rs_points" />
   <arg name="map_frame_id" default="map" />
   <arg name="lidar_odom_frame_id" default="odom" />
 
@@ -16,10 +16,12 @@
   <arg name="robot_odom_frame_id" default="robot_odom" />
 
   <!-- transformation between lidar and base_link -->
-  <node pkg="tf" type="static_transform_publisher" name="lidar2base_publisher" args="-0.064 0 0.1377 0 0 0 $(arg base_link_frame_id) velodyne 10" />
+  <node pkg="tf" type="static_transform_publisher" name="lidar2base_publisher" args="-0.064 0 0.1377 0 0 0 base_link robosense 10" />
 
   <!-- in case you use velodyne_driver, comment out the following line -->
-  <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen"/>
+  <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen">
+    <remap from="/gpsimu_driver/imu_data" to="/imu"/>
+  </node>
 
   <!-- prefiltering_nodelet -->
   <node pkg="nodelet" type="nodelet" name="prefiltering_nodelet" args="load hdl_graph_slam/PrefilteringNodelet $(arg nodelet_manager)">
@@ -72,9 +74,9 @@
   <node pkg="nodelet" type="nodelet" name="floor_detection_nodelet" args="load hdl_graph_slam/FloorDetectionNodelet $(arg nodelet_manager)" if="$(arg enable_floor_detection)">
     <param name="points_topic" value="$(arg points_topic)" />
     <param name="tilt_deg" value="0.0" />
-    <param name="sensor_height" value="1.5" />
-    <param name="height_clip_range" value="0.5" />
-    <param name="floor_pts_thresh" value="256" />
+    <param name="sensor_height" value="1.377" />
+    <param name="height_clip_range" value="1.5" />
+    <param name="floor_pts_thresh" value="10" />
     <param name="use_normal_filtering" value="true" />
     <param name="normal_filter_thresh" value="20.0" />
   </node>
