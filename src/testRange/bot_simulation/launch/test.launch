@@ -33,8 +33,6 @@
   </node>
   <!-- end of bringup -->
 
-  <include file="$(find bot_simulation)/launch/hdl_graph_slam.launch">
+  <include file="$(find lio_sam)/launch/run.launch">
   </include>
-
-  <node pkg="rviz" type="rviz" name="rviz" required="true"/>
 </launch>
