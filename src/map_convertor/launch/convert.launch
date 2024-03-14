@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="map_convertor" type="map_convertor_node" name="map_convertor_node">
+  <param name="thre_z_min" value="0.2"/>
+    <param name="thre_z_max" value="0.5"/>
+    <param name="flag_pass_through" value="0"/>
+    <param name="grid_x" value="0.1"/>
+    <param name="grid_y" value="0.1"/>
+    <param name="grid_z" value="0.1"/>
+    <param name="thre_radius" value="0.5"/>
+    <param name="map_resolution" value="0.05"/>
+    <param name="map_topic_name" value="map"/>
+    <param name="meanK" value="50"/>
+    <param name="static_stddev" value="0.8"/>
+    <param name="path_to_map" value="/home/mira/Downloads/LOAM/GlobalMap.pcd"/>
+  </node>
+
+</launch>

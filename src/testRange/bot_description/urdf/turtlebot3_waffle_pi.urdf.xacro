@@ -154,7 +154,7 @@
 
   <link name="imu_link"/>
 
-  <xacro:property name="gpu" value="false" />
+  <xacro:property name="gpu" value="true" />
   <xacro:include filename="$(find robosense_description)/urdf/RS-16.urdf.xacro"/>
   <xacro:RS-16 parent="base_link" name="robosense" topic="/rs_points" hz="20" samples="900" gpu="${gpu}">
     <origin xyz="-0.064 0 0.1" rpy="0 0 0"/>

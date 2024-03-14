@@ -16,3 +16,18 @@
 [submodule "src/LIO-SAM"]
 	path = src/LIO-SAM
 	url = git@github.com:TixiaoShan/LIO-SAM.git
+[submodule "src/--force"]
+	path = src/--force
+	url = https://github.com/ros-perception/pointcloud_to_laserscan.git
+[submodule "src/pointcloud_to_laserscan"]
+	path = src/pointcloud_to_laserscan
+	url = git@github.com:ros-perception/pointcloud_to_laserscan.git
+[submodule "src/geometry2"]
+	path = src/geometry2
+	url = git@github.com:ros/geometry2.git
+[submodule "src/navigation"]
+	path = src/navigation
+	url = git@github.com:ros-planning/navigation.git
+[submodule "src/testRange/bot_simulation/aws-robomaker-small-warehouse-world"]
+	path = src/testRange/bot_simulation/aws-robomaker-small-warehouse-world
+	url = git@github.com:aws-robotics/aws-robomaker-small-warehouse-world.git
